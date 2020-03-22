@@ -15,17 +15,17 @@
 
     <div class="post-card-content">
 
-        <a class="post-card-content-link" href="{{url}}">
 
-            <header class="post-card-header">
-                {{#if primary_tag}}
-                {{#primary_tag}}
-                <div class="post-card-primary-tag"><a href="{{url}}">{{name}}</a></div>
-                {{/primary_tag}}
-                {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
+        <header class="post-card-header">
+            {{#if primary_tag}}
+            {{#primary_tag}}
+            <div class="post-card-primary-tag"><a href="{{url}}">{{name}}</a></div>
+            {{/primary_tag}}
+            {{/if}}
+        </header>
 
+        <a class="post-card-content-link" href="{{url}}" title="{{title}}">
+            <h2 class="post-card-title">{{title}}</h2>
             <section class="post-card-excerpt">
                 {{#if feature_image}}
                 <p>{{excerpt words="30"}}</p>
@@ -33,7 +33,6 @@
                 <p>{{excerpt words="44"}}</p>
                 {{/if}}
             </section>
-
         </a>
 
         <footer class="post-card-meta">
