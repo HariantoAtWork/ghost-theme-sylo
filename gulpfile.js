@@ -35,7 +35,9 @@ function hbs(done) {
 function css(done) {
 	pump(
 		[
-			src('assets/css/screen.scss', { sourcemaps: true }),
+			src(['assets/css/000-font*.scss', 'assets/css/screen.scss'], {
+				sourcemaps: true
+			}),
 			rename({ extname: '.css' }),
 			sass().on('error', sass.logError),
 			autoprefixer(),
