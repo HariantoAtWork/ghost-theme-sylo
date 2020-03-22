@@ -1,0 +1,235 @@
+@media (prefers-color-scheme: dark) {
+	body {
+		color: rgba(255, 255, 255, 0.75);
+		background: rgb(25, 27, 31);
+	}
+
+	img {
+		opacity: 0.9;
+	}
+
+	.site-header-background:before {
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	.post-feed {
+		background: rgb(25, 27, 31);
+	}
+
+	.post-card,
+	.post-card:hover {
+		border-bottom-color: rgb(43, 47, 54);
+	}
+
+	.author-profile-image {
+		background: rgb(25, 27, 31);
+	}
+
+	.post-card-byline-content a {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	.post-card-byline-content a:hover {
+		color: #fff;
+	}
+
+	.post-card-image {
+		background: rgb(25, 27, 31);
+	}
+
+	.post-card-title {
+		color: rgba(255, 255, 255, 0.85);
+		background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+		/* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0))); */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		/* text-shadow: 0 1px 0 black; */
+		/* text-shadow: 0 1px black; */
+		/* -webkit-text-stroke-width: 1px; */
+		/* -webkit-text-stroke-color: rgba(0, 0, 0, 0.39); */
+		color: red;
+	}
+
+	.post-card-excerpt {
+		color: rgb(146, 163, 171);
+	}
+
+	.author-avatar,
+	.static-avatar {
+		border-color: rgb(25, 27, 31);
+	}
+
+	.site-main,
+	.post-template .site-main,
+	.page-template .site-main {
+		background: rgb(25, 27, 31);
+	}
+
+	.post-full-content {
+		background: rgb(25, 27, 31);
+	}
+
+	.post-full-title {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.post-full-custom-excerpt {
+		color: rgb(146, 163, 171);
+	}
+
+	.post-full-image {
+		background-color: rgb(43, 47, 54);
+	}
+
+	.post-full-byline {
+		border-top-color: rgb(59, 64, 74);
+	}
+
+	.post-full-byline-meta h4 a {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	.post-full-byline-meta h4 a:hover {
+		color: #fff;
+	}
+
+	.author-list-item .author-card {
+		background: rgb(34, 37, 42);
+		box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
+	}
+
+	.author-list-item .author-card:before {
+		border-top-color: rgb(34, 37, 42);
+	}
+
+	.no-image .author-social-link a {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	.post-full-content h1,
+	.post-full-content h2,
+	.post-full-content h3,
+	.post-full-content h4,
+	.post-full-content h6 {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.post-full-content a {
+		color: #fff;
+		box-shadow: inset 0 -1px 0 #fff;
+	}
+
+	.post-full-content strong {
+		color: #fff;
+	}
+
+	.post-full-content em {
+		color: #fff;
+	}
+
+	.post-full-content code {
+		color: #fff;
+		background: #000;
+	}
+
+	hr {
+		border-top-color: rgb(43, 47, 54);
+	}
+
+	.post-full-content figcaption {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.post-full-content table td:first-child {
+		background-image: linear-gradient(
+			to right,
+			rgb(25, 27, 31) 50%,
+			rgba(25, 27, 31, 0) 100%
+		);
+	}
+
+	.post-full-content table td:last-child {
+		background-image: linear-gradient(
+			to left,
+			rgb(25, 27, 31) 50%,
+			rgba(25, 27, 31, 0) 100%
+		);
+	}
+
+	.post-full-content table th {
+		color: rgba(255, 255, 255, 0.85);
+		background-color: rgb(43, 47, 54);
+	}
+
+	.post-full-content table th,
+	.post-full-content table td {
+		border: rgb(43, 47, 54) 1px solid;
+	}
+
+	.post-full-content .kg-bookmark-container,
+	.post-full-content .kg-bookmark-container:hover {
+		color: rgba(255, 255, 255, 0.75);
+		box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
+	}
+
+	.kg-bookmark-title {
+		color: #fff;
+	}
+
+	.kg-bookmark-description {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	.kg-bookmark-metadata {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	.site-archive-header .no-image {
+		color: rgba(255, 255, 255, 0.9);
+		background: rgb(25, 27, 31);
+	}
+
+	.site-archive-header .no-image .site-header-content {
+		border-bottom-color: rgb(59, 64, 74);
+	}
+
+	.site-header-content .author-profile-image {
+		box-shadow: 0 0 0 6px hsla(0, 0%, 100%, 0.04);
+	}
+
+	.subscribe-form {
+		border: none;
+		background: linear-gradient(rgb(11, 12, 14), rgb(18, 20, 23));
+	}
+
+	.subscribe-form-title {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.subscribe-form p {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.subscribe-email {
+		border-color: rgb(39, 42, 48);
+		color: rgba(255, 255, 255, 0.9);
+		background: rgb(32, 34, 40);
+	}
+
+	.subscribe-email:focus {
+		border-color: rgb(82, 88, 102);
+	}
+
+	.subscribe-form button {
+		opacity: 0.9;
+	}
+
+	.subscribe-form .invalid .message-error,
+	.subscribe-form .error .message-error {
+		color: rgb(236, 105, 75);
+	}
+
+	.subscribe-form .success .message-success {
+		color: rgb(172, 208, 83);
+	}
+}

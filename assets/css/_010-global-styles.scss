@@ -1,0 +1,45 @@
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+
+@import 'global';
+
+:root {
+	/* Colours */
+	--blue: #3eb0ef;
+	--green: #a4d037;
+	--purple: #ad26b4;
+	--yellow: #fecd35;
+	--red: #f05230;
+	--darkgrey: #15171a;
+	--midgrey: #738a94;
+	--lightgrey: #c5d2d9;
+	--whitegrey: #e5eff5;
+	--pink: #fa3a57;
+	--brown: #a3821a;
+	--darkmode: color(var(--darkgrey) l(+2%));
+}
+
+body {
+	background-color: rgb(238, 174, 202);
+	background-image: linear-gradient(
+		180deg,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-size: cover;
+	border-radius: 100%;
+}
+
+.hidden {
+	visibility: hidden;
+	position: absolute;
+	text-indent: -9999px;
+}

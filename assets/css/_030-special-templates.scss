@@ -1,0 +1,18 @@
+/* 3. Special Template Styles
+/* ---------------------------------------------------------- */
+
+@media (min-width: 900px) {
+	.home-template,
+	.tag-template,
+	.author-template {
+		.post-feed {
+			padding: 40px 0 5vw;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+	}
+
+	.home-template .site-nav {
+		position: relative;
+	}
+}

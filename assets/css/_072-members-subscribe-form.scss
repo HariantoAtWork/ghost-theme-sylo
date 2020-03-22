@@ -1,0 +1,161 @@
+/* 7.2. Members Subscribe Form
+/* ---------------------------------------------------------- */
+
+.subscribe-form {
+	margin: 1.5em 0;
+	padding: 6.5vw 7vw 8vw;
+	border: rgb(227, 233, 237) 1px solid;
+	text-align: center;
+	background: linear-gradient(rgb(251, 253, 254), rgb(244, 248, 251));
+	border-radius: 3px;
+}
+
+.subscribe-form-title {
+	margin: 0 0 3px 0;
+	padding: 0;
+	color: #15171a;
+	font-size: 3.5rem;
+	line-height: 1;
+	font-weight: 600;
+}
+
+.subscribe-form-description {
+	margin-bottom: 0.2em 0 1em;
+	color: #738a94;
+	font-size: 2.1rem;
+	line-height: 1.55em;
+}
+
+.subscribe-form form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 460px;
+}
+
+.subscribe-form .form-group {
+	align-self: stretch;
+	display: flex;
+}
+
+.subscribe-email {
+	display: block;
+	padding: 10px;
+	width: 100%;
+	border: rgb(218, 226, 231) 1px solid;
+	color: #738a94;
+	font-size: 1.8rem;
+	line-height: 1em;
+	font-weight: normal;
+	user-select: text;
+	border-radius: 5px;
+	transition: border-color 0.15s linear;
+
+	-webkit-appearance: none;
+}
+
+.subscribe-email:focus {
+	outline: 0;
+	border-color: rgb(190, 205, 213);
+}
+
+.subscribe-form button {
+	position: relative;
+	display: inline-block;
+	margin: 0 0 0 10px;
+	padding: 0 20px;
+	height: 43px;
+	outline: none;
+	color: #fff;
+	font-size: 1.5rem;
+	line-height: 39px;
+	font-weight: 400;
+	text-align: center;
+	background: linear-gradient(
+		rgb(79, 183, 240),
+		rgb(41, 160, 224) 60%,
+		rgb(41, 160, 224) 90%,
+		rgb(54, 166, 226)
+	);
+	border-radius: 5px;
+
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+.subscribe-form button:active,
+.subscribe-form button:focus {
+	background: rgb(32, 156, 223);
+}
+
+.subscribe-form .button-loader,
+.subscribe-form .message-success,
+.subscribe-form .message-error {
+	display: none;
+}
+
+.subscribe-form .loading .button-content {
+	visibility: hidden;
+}
+
+.subscribe-form .loading .button-loader {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	display: inline-block;
+	margin-left: -19px;
+	transform: scale(0.7);
+}
+
+.subscribe-form .button-loader svg path,
+.subscribe-form .button-loader svg rect {
+	fill: #fff;
+}
+
+.subscribe-form .success .message-success,
+.subscribe-form .invalid .message-error,
+.subscribe-form .error .message-error {
+	margin: 1em auto 0;
+	max-width: 400px;
+	color: #f05230;
+	font-size: 1.6rem;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.subscribe-form .success .message-success {
+	display: block;
+	color: rgb(152, 194, 46);
+}
+
+.subscribe-form .invalid .message-error,
+.subscribe-form .error .message-error {
+	display: block;
+}
+
+@media (max-width: 650px) {
+	.subscribe-form-title {
+		font-size: 2.4rem;
+	}
+
+	.subscribe-form-description {
+		font-size: 1.6rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.subscribe-form form {
+		flex-direction: column;
+	}
+
+	.subscribe-form .form-group {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.subscribe-form button {
+		margin: 10px 0 0 0;
+		width: 100%;
+	}
+}

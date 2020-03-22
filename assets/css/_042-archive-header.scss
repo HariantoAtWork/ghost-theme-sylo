@@ -1,0 +1,67 @@
+/* 4.2 Archive header (tag and author post lists)
+/* ---------------------------------------------------------- */
+
+.site-archive-header {
+	.site-header-content {
+		position: relative;
+		align-items: stretch;
+		padding: 12vw 0 20px;
+		min-height: 200px;
+		max-height: 600px;
+	}
+
+	.no-image {
+		padding-top: 0;
+		padding-bottom: 0;
+		color: #15171a;
+		background: #fff;
+		opacity: 1;
+
+		.site-description {
+			color: #738a94;
+			opacity: 1;
+		}
+
+		.site-header-content {
+			padding: 5vw 0 10px;
+			border-bottom: 1px solid rgb(233, 238, 241);
+		}
+	}
+}
+
+/* Special header styles for smaller screens */
+
+@media (max-width: 900px) {
+	.site-header-content {
+		padding-bottom: 9vw;
+	}
+}
+
+@media (max-width: 500px) {
+	.site-home-header {
+		.site-title {
+			font-size: 4.2rem;
+		}
+
+		.site-description {
+			font-size: 1.8rem;
+		}
+	}
+
+	.site-archive-header {
+		.site-header-content {
+			flex-direction: column;
+			align-items: center;
+			min-height: unset;
+		}
+
+		.site-title {
+			font-size: 4.2rem;
+			text-align: center;
+		}
+
+		.no-image .site-header-content {
+			padding: 12vw 0 20px;
+		}
+	}
+}
