@@ -110,7 +110,11 @@
 		padding: 8px;
 		border-radius: 8px;
 		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.384);
-		margin: 10px;
+		margin-top: 10px;
+		margin-right: 10px;
+		margin-bottom: 24px;
+		margin-left: 10px;
+		position: relative;
 	}
 }
 
@@ -131,8 +135,8 @@
 	// edit
 	.post-feed & {
 		position: absolute;
-		bottom: 0;
-		transform: translateY(-80%);
+		top: calc(100% - 16px);
+		// transform: translateY(-50%);
 	}
 }
 
@@ -311,6 +315,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 		.post-card-content {
 			flex: 0 1 361px;
 			justify-content: center;
+			padding-left: 40px;
 		}
 
 		.post-card-title {
@@ -320,7 +325,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 		.post-card-content-link,
 		.post-card-meta {
-			padding: 0 0 0 40px;
+			// padding: 0 0 0 40px;
 		}
 
 		.post-card-excerpt p {
