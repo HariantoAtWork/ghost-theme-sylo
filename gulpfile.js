@@ -3,21 +3,16 @@ const pump = require('pump')
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload')
-const postcss = require('gulp-postcss')
+const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 sass.compiler = require('node-sass')
+const autoprefixer = require('gulp-autoprefixer')
+const cssnano = require('gulp-cssnano')
 const zip = require('gulp-zip')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const beeper = require('beeper')
 const fs = require('fs')
-
-// postcss plugins
-const autoprefixer = require('autoprefixer')
-const colorFunction = require('postcss-color-function')
-const cssnano = require('cssnano')
-const customProperties = require('postcss-custom-properties')
-const easyimport = require('postcss-easy-import')
 
 function serve(done) {
 	livereload.listen()
@@ -38,19 +33,13 @@ function hbs(done) {
 }
 
 function css(done) {
-	const processors = [
-		sass,
-		// easyimport,
-		customProperties({ preserve: false }),
-		colorFunction(),
-		autoprefixer(),
-		cssnano()
-	]
-
 	pump(
 		[
-			src('assets/css/*.scss', { sourcemaps: true }),
-			postcss(processors),
+			src('assets/css/screen.scss', { sourcemaps: true }),
+			rename({ extname: '.css' }),
+			sass().on('error', sass.logError),
+			autoprefixer(),
+			cssnano(),
 			dest('assets/built/', { sourcemaps: '.' }),
 			livereload()
 		],
