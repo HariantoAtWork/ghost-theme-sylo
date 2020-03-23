@@ -37,9 +37,9 @@ $post-feed-spacing: 8px;
 	position: relative;
 	display: block;
 	overflow: hidden;
-	border-radius: 3px;
+	border-radius: 4px;
 	margin-right: 4px;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 4px 4px 0 #fff,
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 4px 4px 0 rgba(180, 180, 180, 0.8),
 		4px 5px 0 rgba(0, 0, 0, 0.158);
 }
 
