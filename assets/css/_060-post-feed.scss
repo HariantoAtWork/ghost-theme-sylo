@@ -1,5 +1,7 @@
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
+$post-feed-spacing: 8px;
+
 .posts {
 	overflow-x: hidden;
 }
@@ -8,7 +10,7 @@
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 -20px;
+	margin: 0 (-$post-feed-spacing);
 	padding: 50px 0 0;
 	/* background: #fff; */
 }
@@ -22,8 +24,8 @@
 	// margin: 0 0 40px;
 	margin-bottom: 20px;
 	// padding: 0 20px 40px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: $post-feed-spacing;
+	padding-right: $post-feed-spacing;
 	padding-bottom: 20px;
 	min-height: 220px;
 	// edit
