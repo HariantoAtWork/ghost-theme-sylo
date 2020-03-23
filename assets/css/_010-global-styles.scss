@@ -46,3 +46,13 @@ img {
 	background-repeat: repeat;
 	background-position: center center;
 }
+
+.hide-scroll {
+	overflow: hidden;
+	height: 100vh;
+	&::-webkit-scrollbar,
+	*::-webkit-scrollbar {
+		display: none;
+		scrollbar-width: none;
+	}
+}
