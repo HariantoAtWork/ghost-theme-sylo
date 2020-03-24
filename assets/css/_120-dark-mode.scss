@@ -1,14 +1,16 @@
 @media (prefers-color-scheme: dark) {
 	body {
+		background: rgb(25, 27, 31);
+		color: rgba(255, 255, 255, 0.75);
+
 		&:before {
-			content: '';
+			// content: '';
 			position: fixed;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
 			display: block;
-			color: rgba(255, 255, 255, 0.75);
 			background: rgb(25, 27, 31);
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
 			background-attachment: scroll;
@@ -84,11 +86,15 @@
 		border-color: rgb(25, 27, 31);
 	}
 
-	.site-main,
-	.post-template .site-main,
-	.page-template .site-main {
-		// background: rgb(25, 27, 31);
-		background: unset;
+	.site-main {
+		.post-template & {
+			// background-color: unset;
+			// background: rgb(25, 27, 31);
+		}
+		.page-template & {
+			background-color: unset;
+			// background: rgb(25, 27, 31);
+		}
 	}
 
 	.post-full-content {
