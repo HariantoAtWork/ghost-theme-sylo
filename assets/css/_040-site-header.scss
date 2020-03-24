@@ -65,9 +65,10 @@
 }
 
 .site-logo {
-	max-height: 80px;
+	max-height: 100px;
 	border-radius: 50%;
-	border: 3px solid rgba(255, 255, 255, 0.8);
+	background-color: rgba(black, 0.6);
+	padding: 8px;
 }
 
 .site-description {
