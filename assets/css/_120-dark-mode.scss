@@ -1,12 +1,21 @@
 @media (prefers-color-scheme: dark) {
 	body {
-		color: rgba(255, 255, 255, 0.75);
-		background: rgb(25, 27, 31);
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
-		background-attachment: scroll;
-		background-size: auto;
-		background-repeat: repeat;
-		background-position: center center;
+		&:before {
+			content: '';
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: block;
+			color: rgba(255, 255, 255, 0.75);
+			background: rgb(25, 27, 31);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+			background-attachment: scroll;
+			background-size: auto;
+			background-repeat: repeat;
+			background-position: center center;
+		}
 	}
 
 	img {
@@ -18,7 +27,7 @@
 	}
 
 	.post-feed {
-		background: rgb(25, 27, 31);
+		// background: rgb(25, 27, 31);
 	}
 
 	.post-card,
@@ -64,11 +73,6 @@
 		/* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0))); */
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		/* text-shadow: 0 1px 0 black; */
-		/* text-shadow: 0 1px black; */
-		/* -webkit-text-stroke-width: 1px; */
-		/* -webkit-text-stroke-color: rgba(0, 0, 0, 0.39); */
-		color: red;
 	}
 
 	.post-card-excerpt {
@@ -83,11 +87,13 @@
 	.site-main,
 	.post-template .site-main,
 	.page-template .site-main {
-		background: rgb(25, 27, 31);
+		// background: rgb(25, 27, 31);
+		background: unset;
 	}
 
 	.post-full-content {
-		background: rgb(25, 27, 31);
+		// background: rgb(25, 27, 31);
+		background: unset;
 	}
 
 	.post-full-title {
