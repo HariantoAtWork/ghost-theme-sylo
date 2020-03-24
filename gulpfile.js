@@ -105,8 +105,8 @@ try {
 	config = null
 }
 
-const REPO = 'TryGhost/Casper'
-const USER_AGENT = 'Casper'
+const REPO = 'HariantoAtWork/ghost-theme-sylo'
+const USER_AGENT = 'GhostThemeSylo'
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md')
 
 const changelog = ({ previousVersion }) => {
