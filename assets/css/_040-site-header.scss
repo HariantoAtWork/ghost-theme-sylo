@@ -67,7 +67,8 @@
 .site-logo {
 	max-height: 100px;
 	border-radius: 50%;
-	box-shadow: -1px -1px 1px white;
+	box-shadow: -1px -1px 1px rgba(white, 0.2), 1px 1px 1px rgba(black, 0.2);
+	-webkit-mask-image: unset;
 	padding: 8px;
 }
 
