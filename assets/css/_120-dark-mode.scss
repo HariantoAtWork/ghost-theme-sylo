@@ -83,7 +83,10 @@
 
 	.author-avatar,
 	.static-avatar {
-		border-color: rgb(25, 27, 31);
+		// border-color: rgb(25, 27, 31);
+		border-width: 0;
+		box-shadow: -1px -1px 1px rgba(white, 0.9),
+			1px 1px 1px rgba(rgb(49, 49, 49), 0.9);
 	}
 
 	.site-main {
