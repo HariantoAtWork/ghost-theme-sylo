@@ -54,6 +54,17 @@
 .post-full-title {
 	margin: 0 0 0.2em;
 	color: rgb(9, 10, 11);
+	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	// -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	.post-full & {
+		margin-top: 0.2em;
+		line-height: 0.8;
+		padding-top: 0.2em;
+		padding-bottom: 0.2em;
+	}
 }
 
 .post-full-custom-excerpt {
