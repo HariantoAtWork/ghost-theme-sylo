@@ -23,6 +23,7 @@ production stylesheet in assets/built/screen.css
 10. Subscribe Overlay
 11. Site Footer
 12. Dark Mode
+13. Components
 
 */
 
@@ -118,3 +119,8 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 @import '_120-dark-mode';
+
+/* 12. Components
+/* ---------------------------------------------------------- */
+
+@import '_130-components';
