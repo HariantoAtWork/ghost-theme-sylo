@@ -109,6 +109,56 @@
 	background: #fff;
 }
 
+.post-content {
+	.post-full-content & {
+		counter-reset: major;
+		> h1,
+		> h2,
+		> h3,
+		> h4 {
+			&:before {
+				position: absolute;
+				text-align: right;
+				transform: translateX(calc(-100% - 20px));
+				font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+				color: rgb(158, 158, 158);
+				font-size: 12px;
+				background: linear-gradient(141deg, #0fb8ad, #1fc8db 51%, #2cb5e8 75%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+		> h1 {
+			counter-reset: minor;
+			counter-increment: major;
+			&:before {
+				content: counter(major) ' ';
+			}
+		}
+		> h2 {
+			counter-reset: patch;
+			counter-increment: minor;
+			&:before {
+				content: counter(major) '.' counter(minor) ' ';
+			}
+		}
+		> h3 {
+			counter-reset: fix;
+			counter-increment: patch;
+			&:before {
+				content: counter(major) '.' counter(minor) '.' counter(patch) ' ';
+			}
+		}
+		> h4 {
+			counter-increment: fix;
+			&:before {
+				content: counter(major) '.' counter(minor) '.' counter(patch) '.'
+					counter(fix) ' ';
+			}
+		}
+	}
+}
+
 @media (max-width: 1170px) {
 	.post-full-content {
 		padding: 0 11vw;
@@ -414,7 +464,8 @@ Usage (In Ghost editor):
 
 .post-full-content h4 {
 	margin: 0.5em 0 0.2em;
-	font-size: 2.5rem;
+	font-size: 2.3rem;
+	line-height: 1.2em;
 	font-weight: 600;
 }
 
