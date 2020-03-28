@@ -111,20 +111,23 @@
 
 .post-content {
 	.post-full-content & {
-		counter-reset: major;
+		counter-reset: major minor patch fix;
 		> h1,
 		> h2,
 		> h3,
 		> h4 {
+			position: relative;
 			&:before {
 				position: absolute;
+				left: -20px;
+				transform: translateX(-100%);
 				text-align: right;
-				transform: translateX(calc(-100% - 20px));
+				display: block;
 				font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-				color: rgb(158, 158, 158);
+				color: #0fb8ad;
 				font-size: 12px;
 				background: linear-gradient(141deg, #0fb8ad, #1fc8db 51%, #2cb5e8 75%);
-				-webkit-background-clip: text;
+				background-clip: text;
 				-webkit-text-fill-color: transparent;
 			}
 		}
