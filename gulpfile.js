@@ -7,7 +7,7 @@ const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 sass.compiler = require('node-sass')
 const autoprefixer = require('gulp-autoprefixer')
-const cssnano = require('gulp-cssnano')
+const cleancss = require('gulp-clean-css')
 const zip = require('gulp-zip')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
@@ -41,7 +41,7 @@ function css(done) {
 			rename({ extname: '.css' }),
 			sass().on('error', sass.logError),
 			autoprefixer(),
-			cssnano(),
+			cleancss(),
 			dest('assets/built/', { sourcemaps: '.' }),
 			livereload()
 		],
