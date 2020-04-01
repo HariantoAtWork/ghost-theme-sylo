@@ -1,6 +1,6 @@
 const md5 = require('md5')
 const loadScript = url =>
-	new Promise(resolve => {
+	new Promise((resolve, reject) => {
 		const md5ed = md5(url)
 		const existingScript = document.getElementById(md5ed)
 
@@ -10,6 +10,7 @@ const loadScript = url =>
 			script.src = url
 			document.body.appendChild(script)
 			script.onload = resolve
+			script.onerror = reject
 		} else {
 			console.warn('script exist:' + url)
 			resolve()
