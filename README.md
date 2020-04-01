@@ -1,12 +1,14 @@
-# Casper
+# Sylo
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
+Sylo - Fork of Casper The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/HariantoAtWork/ghost-theme-sylo/releases) page.
 
 &nbsp;
 
 ![screenshot-desktop](https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png)
 
 &nbsp;
+
+WORK IN PROGRESS - This Fork isn't build Mobile First and not converted to BEM (CSS style guidelines)
 
 # First time using a Ghost theme?
 
@@ -32,14 +34,14 @@ One neat trick is that you can also create custom one-off templates by adding th
 
 # Development
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+Sylo styles are compiled using Gulp/SASS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/). After that, from the theme's root directory:
 
 ```bash
 # install dependencies
-yarn install
+npm install
 
 # run development server
-yarn dev
+npm dev
 ```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
@@ -48,14 +50,12 @@ The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which
 
 ```bash
 # create .zip file
-yarn zip
+npm zip
 ```
 
-# PostCSS Features Used
+# Fuck PostCSS Features! Just Gulp streams with SASS
 
 - Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
 
 
 # SVG Icons
