@@ -120,26 +120,65 @@ $post-feed-spacing: 8px;
 		margin-right: 10px;
 		margin-left: 10px;
 		position: relative;
+	}
+}
 
-		.tag-draft & {
+.post-card-label {
+	overflow: hidden;
+	position: absolute;
+	$offset: -4px;
+	top: $offset;
+	bottom: $offset;
+	left: $offset;
+	right: $offset;
+	z-index: 0;
+
+	.post-feed & {
+		.tag-journal & {
 			&:before {
 				// TAG
+				$label-color: #330867;
+				$border-color: #0fb8ad;
 				position: absolute;
 				right: 0;
-				transform: rotate(45deg) translateX(24%) translateY(-102%);
-				content: 'Draft';
-				background-color: #330867;
+				transform: rotate(45deg) translateX(27%) translateY(-50%);
+				content: 'Journal';
+				background-color: $label-color;
 				padding: 8px;
 				width: 200px;
 				text-align: center;
 				color: white;
 				white-space: pre;
-				border-top: 4px solid #0fb8ad;
-				border-bottom: 4px solid #0fb8ad;
-				outline: 4px solid rgba(51, 8, 103, 0.94);
+				border-top: 4px solid $border-color;
+				border-bottom: 4px solid $border-color;
+				outline: 4px solid rgba($label-color, 0.94);
 				line-height: 1em;
 				font-weight: bold;
 				box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
+			}
+		}
+
+		.tag-draft & {
+			&:after {
+				// TAG
+				$label-color: white;
+				$border-color: #b3b3b3;
+				position: absolute;
+				right: 0;
+				transform: rotate(45deg) translateX(27%) translateY(-50%);
+				content: 'Draft';
+				background-color: $label-color;
+				padding: 8px;
+				width: 200px;
+				text-align: center;
+				color: black;
+				white-space: pre;
+				border-top: 4px solid $border-color;
+				border-bottom: 4px solid $border-color;
+				outline: 4px solid rgba($label-color, 0.94);
+				line-height: 1em;
+				font-weight: bold;
+				box-shadow: 8px 8px 4px rgba(black, 0.5);
 			}
 		}
 	}
