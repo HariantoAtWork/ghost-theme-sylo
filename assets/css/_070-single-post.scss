@@ -7,6 +7,31 @@
 	background: #fff;
 }
 
+.post-full {
+	&.tag-draft {
+		&:before {
+			// TAG
+			z-index: 5;
+			position: fixed;
+			right: 0;
+			transform: rotate(45deg) translateX(24%) translateY(-102%);
+			content: 'Draft';
+			background-color: #330867;
+			padding: 8px;
+			width: 200px;
+			text-align: center;
+			color: white;
+			white-space: pre;
+			border-top: 4px solid #0fb8ad;
+			border-bottom: 4px solid #0fb8ad;
+			outline: 4px solid rgba(51, 8, 103, 0.94);
+			line-height: 1em;
+			font-weight: bold;
+			box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
+		}
+	}
+}
+
 .post-full-header {
 	position: relative;
 	margin: 0 auto;
