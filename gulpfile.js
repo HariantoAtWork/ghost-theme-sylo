@@ -10,7 +10,8 @@ const autoprefixer = require('gulp-autoprefixer')
 const cleancss = require('gulp-clean-css')
 const zip = require('gulp-zip')
 const concat = require('gulp-concat')
-const uglify = require('gulp-uglify')
+// const uglify = require('gulp-uglify')
+const es6 = require('gulp-terser')
 const beeper = require('beeper')
 const fs = require('fs')
 
@@ -20,7 +21,7 @@ function serve(done) {
 }
 
 const handleError = done => {
-	return function(err) {
+	return function (err) {
 		if (err) {
 			beeper()
 		}
@@ -61,7 +62,7 @@ function js(done) {
 				{ sourcemaps: true }
 			),
 			concat('casper.js'),
-			uglify(),
+			es6(),
 			dest('assets/built/', { sourcemaps: '.' }),
 			livereload()
 		],
