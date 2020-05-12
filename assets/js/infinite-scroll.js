@@ -32,6 +32,7 @@
 		onPageLoad(doc) {
 			const nextElement = doc.querySelector('link[rel=next]')
 			state.href = nextElement && nextElement.href
+			!state.href && EventListeners.onDestroy()
 
 			const postElements = doc.querySelectorAll('.post-card')
 			Array.from(postElements).forEach(item => {
