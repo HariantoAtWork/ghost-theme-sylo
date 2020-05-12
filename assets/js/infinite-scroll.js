@@ -82,24 +82,18 @@
 	}
 
 	const requestTick = () => {
-		state.ticking || requestAnimationFrame(app.onUpdate.bind(app))
-		state.ticking = true
-	}
-	const onScroll = event => {
-		state.lastScrollY = window.scrollY
-		requestTick()
-	}
-
-	const onResize = event => {
-		state.lastWindowHeight = window.innerHeight
-		state.lastDocumentHeight = document.documentElement.scrollHeight
-		requestTick()
-	}
-
-	const eventListeners = [
-		['scroll', onScroll, { passive: true }],
-		['resize', onResize]
-	]
+			state.ticking || requestAnimationFrame(app.onUpdate.bind(app))
+			state.ticking = true
+		},
+		onScroll = event => {
+			state.lastScrollY = window.scrollY
+			requestTick()
+		},
+		onResize = event => {
+			state.lastWindowHeight = window.innerHeight
+			state.lastDocumentHeight = document.documentElement.scrollHeight
+			requestTick()
+		}
 
 	const factoryListener = list => {
 		let isCreated = false
@@ -119,6 +113,10 @@
 		}
 	}
 
-	const EventListeners = factoryListener(eventListeners)
+	const eventListeners = [
+			['scroll', onScroll, { passive: true }],
+			['resize', onResize]
+		],
+		EventListeners = factoryListener(eventListeners)
 	EventListeners.onCreate()
 })()
