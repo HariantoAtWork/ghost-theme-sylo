@@ -2,31 +2,31 @@ const { series, watch, src, dest, parallel } = require('gulp')
 const pump = require('pump')
 
 // gulp plugins and utils
-const livereload = require('gulp-livereload')
-const rename = require('gulp-rename')
-const sass = require('gulp-sass')
+const livereload = require('gulp-livereload'),
+	rename = require('gulp-rename'),
+	autoprefixer = require('gulp-autoprefixer'),
+	cleancss = require('gulp-clean-css'),
+	zip = require('gulp-zip'),
+	concat = require('gulp-concat'),
+	// const uglify = require('gulp-uglify'),
+	babel = require('gulp-babel'),
+	es6 = require('gulp-terser'),
+	beeper = require('beeper'),
+	fs = require('fs'),
+	notfier = require('node-notifier'),
+	sass = require('gulp-sass')
 sass.compiler = require('node-sass')
-const autoprefixer = require('gulp-autoprefixer')
-const cleancss = require('gulp-clean-css')
-const zip = require('gulp-zip')
-const concat = require('gulp-concat')
-// const uglify = require('gulp-uglify')
-const es6 = require('gulp-terser')
-const beeper = require('beeper')
-const fs = require('fs')
 
 function serve(done) {
-	livereload.listen()
+	// livereload.listen()
 	done()
 }
 
-const handleError = done => {
-	return function (err) {
-		if (err) {
-			beeper()
-		}
-		return done(err)
+const handleError = done => err => {
+	if (err) {
+		beeper()
 	}
+	return done(err)
 }
 
 function hbs(done) {
@@ -43,14 +43,16 @@ function css(done) {
 			sass().on('error', sass.logError),
 			autoprefixer(),
 			cleancss(),
-			dest('assets/built/', { sourcemaps: '.' }),
-			livereload()
+			dest('assets/built/', { sourcemaps: '.' })
 		],
 		handleError(done)
 	)
 }
 
 function js(done) {
+	const lr = args => {
+		livereload.apply(args)
+	}
 	pump(
 		[
 			src(
@@ -61,10 +63,10 @@ function js(done) {
 				],
 				{ sourcemaps: true }
 			),
+			babel(),
 			concat('casper.js'),
-			es6(),
-			dest('assets/built/', { sourcemaps: '.' }),
-			livereload()
+			// es6(),
+			dest('assets/built/', { sourcemaps: '.' })
 		],
 		handleError(done)
 	)
@@ -84,12 +86,32 @@ function zipper(done) {
 		handleError(done)
 	)
 }
-
+const jsWatcher = () => watch('assets/js/**', js)
 const cssWatcher = () => watch('assets/css/**', css)
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs)
-const watcher = parallel(cssWatcher, hbsWatcher)
+const builtWatcher = () => {
+	console.log('Livereload listen PORT: 35729')
+	livereload.listen()
+
+	return watch([
+		'*.hbs',
+		'partials/**/*.hbs',
+		'assets/built/*.css',
+		'assets/built/*.js',
+		'assets/built/**/*.js'
+	]).on('change', event => {
+		setTimeout(() => {
+			livereload.changed(event)
+			notfier.notify({
+				title: 'Livereload',
+				message: event
+			})
+		}, 400)
+	})
+}
+const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher, builtWatcher)
 const build = series(css, js)
-const dev = series(build, serve, watcher)
+const dev = series(build, watcher)
 
 exports.build = build
 exports.zip = series(build, zipper)
