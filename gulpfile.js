@@ -104,10 +104,10 @@ const builtWatcher = () => {
 		setTimeout(() => {
 			livereload.changed(event)
 			notfier.notify({
-				title: 'Livereload',
+				title: 'Live Reload',
 				message: event
 			})
-		}, 600)
+		}, 100)
 	})
 }
 const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher, builtWatcher)
