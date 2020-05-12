@@ -65,7 +65,7 @@ function js(done) {
 			),
 			babel(),
 			concat('casper.js'),
-			// es6(),
+			es6(),
 			dest('assets/built/', { sourcemaps: '.' })
 		],
 		handleError(done)
