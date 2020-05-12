@@ -1,98 +1,101 @@
 {
-    "name": "sylospace",
-    "description": "A clean, minimal default theme for the Ghost publishing platform",
-    "demo": "https://demo.ghost.io",
-    "version": "1.0.1",
-    "engines": {
-        "ghost": ">=3.0.0",
-        "ghost-api": "v3"
-    },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
-    "scripts": {
-        "dev": "gulp",
-        "zip": "gulp zip",
-        "test": "gscan .",
-        "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release"
-    },
-    "author": {
-        "name": "Harianto van Insulinde",
-        "email": "github@hariantoatwork",
-        "url": "https://cv.sylo.space"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
-    },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
-    "devDependencies": {
-        "@tryghost/release-utils": "0.4.1",
-        "autoprefixer": "9.7.4",
+	"name": "sylospace",
+	"description": "A clean, minimal default theme for the Ghost publishing platform",
+	"demo": "https://demo.ghost.io",
+	"version": "1.0.1",
+	"engines": {
+		"ghost": ">=3.0.0",
+		"ghost-api": "v3"
+	},
+	"license": "MIT",
+	"screenshots": {
+		"desktop": "assets/screenshot-desktop.jpg",
+		"mobile": "assets/screenshot-mobile.jpg"
+	},
+	"scripts": {
+		"dev": "gulp",
+		"zip": "gulp zip",
+		"test": "gscan .",
+		"test:ci": "gscan --fatal --verbose .",
+		"pretest": "gulp build",
+		"preship": "yarn test",
+		"ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+		"postship": "git fetch && gulp release",
+		"rsync": "rsync -rtvuc . /var/docker/ghost/blog-ghost/content/themes/sylospace/",
+		"lsyncd": "lsyncd -nodaemon -direct . /var/docker/ghost/blog-ghost/content/themes/sylospace/"
+	},
+	"author": {
+		"name": "Harianto van Insulinde",
+		"email": "github@hariantoatwork",
+		"url": "https://cv.sylo.space"
+	},
+	"gpm": {
+		"type": "theme",
+		"categories": [
+			"Minimal",
+			"Magazine"
+		]
+	},
+	"keywords": [
+		"ghost",
+		"theme",
+		"ghost-theme"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TryGhost/Casper.git"
+	},
+	"bugs": "https://github.com/TryGhost/Casper/issues",
+	"contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+	"devDependencies": {
+		"@tryghost/release-utils": "0.4.1",
+		"autoprefixer": "9.7.4",
 		"babel-core": "^6.26.3",
 		"babel-preset-env": "^1.7.0",
-        "beeper": "2.0.0",
-        "gscan": "3.3.3",
-        "gulp": "4.0.2",
-        "gulp-autoprefixer": "^7.0.1",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-concat": "2.6.1",
-        "gulp-livereload": "4.0.2",
-        "gulp-rename": "^2.0.0",
-        "gulp-sass": "^4.0.2",
+		"beeper": "2.0.0",
+		"gscan": "3.3.3",
+		"gulp": "4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^7.0.1",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "2.6.1",
+		"gulp-livereload": "4.0.2",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^4.0.2",
 		"gulp-terser": "^1.2.0",
-        "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.0.1",
-        "node-sass": "^4.13.1",
-        "pump": "3.0.0"
-    },
-    "browserslist": [
-        "defaults"
-    ],
-    "config": {
-        "posts_per_page": 25,
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1000
-            },
-            "xl": {
-                "width": 2000
-            }
-        }
-    },
-    "dependencies": {
-        "node-notifier": "^6.0.0",
-        "vue": "^2.6.11"
-    }
+		"gulp-uglify": "3.0.2",
+		"gulp-zip": "5.0.1",
+		"node-notifier": "^6.0.0",
+		"node-sass": "^4.13.1",
+		"pump": "3.0.0"
+	},
+	"browserslist": [
+		"defaults"
+	],
+	"config": {
+		"posts_per_page": 25,
+		"image_sizes": {
+			"xxs": {
+				"width": 30
+			},
+			"xs": {
+				"width": 100
+			},
+			"s": {
+				"width": 300
+			},
+			"m": {
+				"width": 600
+			},
+			"l": {
+				"width": 1000
+			},
+			"xl": {
+				"width": 2000
+			}
+		}
+	},
+	"dependencies": {
+		"vue": "^2.6.11"
+	}
 }
