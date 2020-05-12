@@ -100,13 +100,14 @@ const builtWatcher = () => {
 		'assets/built/*.js',
 		'assets/built/**/*.js'
 	]).on('change', event => {
+		// Delay: 600ms
 		setTimeout(() => {
 			livereload.changed(event)
 			notfier.notify({
 				title: 'Livereload',
 				message: event
 			})
-		}, 400)
+		}, 600)
 	})
 }
 const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher, builtWatcher)
