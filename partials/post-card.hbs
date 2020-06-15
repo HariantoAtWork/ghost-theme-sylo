@@ -63,7 +63,10 @@
                         class="bull">&bull;</span> {{reading_time}}</span>
             </div>
             <div class="post-card-comment">
-                <a class="post-card-content-link post-card-content-link--comment" data-disqus-identifier="{{uuid}}" href="{{url}}#disqus_thread"
+                <a class="post-card-content-link post-card-content-link--comment"
+                    data-disqus-url="{{url}}"
+                    data-disqus-identifier="{{uuid}}"
+                    href="{{url}}#disqus_thread"
                     title="{{title}}">
                     comment
                 </a>
